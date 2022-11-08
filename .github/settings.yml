@@ -180,5 +180,5 @@ branches:
         apps: []
         users: []
         teams: 
-          - site-reliability-engineers
-          - infrastructure-automation
+          - @Insight-EMEA/site-reliability-engineers
+          - Insight-EMEA/infrastructure-automation
