@@ -15,11 +15,11 @@ while test $# -gt 0; do
       exit 0
       ;;
     --url*)
-      url=`echo $1 | sed -e 's/^[^=]*=//g'`
+      url=$(echo $1 | sed -e 's/^[^=]*=//g')
       shift
       ;;
     --interval*)
-      interval=`echo $1 | sed -e 's/^[^=]*=//g'`
+      interval=$(echo $1 | sed -e 's/^[^=]*=//g')
       shift
       ;;
     *)
