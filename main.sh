@@ -47,5 +47,5 @@ function poll_status {
   done
 }
 
-printf "\nPolling '${url%\?*}' every $interval seconds, until status is 'complete'\n"
+printf "\nPolling '%s' every %s seconds, until status is 'complete'\n" "${url%\?*}" "$interval"
 poll_status
