@@ -35,7 +35,7 @@ done
 function poll_status {
   while true;
   do
-    status=$(curl "$url" -s -H "Authorization: Basic "$token"" | jq '.status'); #Not sure how to implement the token here
+    status=$(curl "$url" -s -H "Authorization: Basic $token" | jq '.status'); #Not sure how to implement the token here
     echo "$(date +%H:%M:%S): status is $status";
     if [[ "$status" == "\"successful\"" || "$status" == "\"failed\"" || "$status" == "\"cancelled\"" ]]; then
         if [[ "$status" == "\"failed\"" ]]; then
