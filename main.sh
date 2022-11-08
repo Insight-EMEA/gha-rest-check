@@ -35,11 +35,14 @@ done
 function poll_status {
   while true;
   do
-    status=$(curl "$url" -s | jq '.status');
+    status=$(curl "$url" -s | jq '.status'); #Not sure how to implement the token here
     echo "$(date +%H:%M:%S): status is $status";
-    if [[ "$status" == "\"complete\"" || "$status" == "\"failed\"" ]]; then
+    if [[ "$status" == "\"successful\"" || "$status" == "\"failed\"" || "$status" == "\"cancelled\"" ]]; then
         if [[ "$status" == "\"failed\"" ]]; then
           echo "Deployment failed!"
+          exit 1;
+        elif [[ "$status" == "\"cancelled\"" ]]; then
+          echo "Deployment cancelled!";
           exit 1;
         else
           echo "Deployment complete!";
