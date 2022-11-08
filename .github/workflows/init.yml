@@ -1,0 +1,20 @@
+name: Create DevOps checklist in Issues
+
+on: [create]
+
+permissions:
+  contents: read
+  issues: write 
+
+jobs:
+  init:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3.1.0 # https://github.com/actions/checkout/releases/tag/v3.1.0
+      - uses: JasonEtco/create-an-issue@v2.8.0 # https://github.com/JasonEtco/create-an-issue/releases/tag/v2.8.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          filename: .github/devops_checklist.md
+      - run: 'echo Created issue number ${{ steps.create-issue.outputs.number }}'
+      - run: 'echo Created issue: ${{ steps.create-issue.outputs.url }}'
