@@ -179,4 +179,6 @@ branches:
       restrictions:
         apps: []
         users: []
-        teams: [site-reliability-engineers]
+        teams: 
+          - site-reliability-engineers
+          - infrastructure-automation
