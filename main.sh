@@ -31,7 +31,7 @@ done
 function poll_status {
   while true;
   do
-    status=$(curl $url -s | jq '.status');
+    status=$(curl "$url" -s | jq '.status');
     echo "$(date +%H:%M:%S): status is $status";
     if [[ "$status" == "\"complete\"" || "$status" == "\"failed\"" ]]; then
         if [[ "$status" == "\"failed\"" ]]; then
@@ -43,7 +43,7 @@ function poll_status {
         fi
         break;
     fi;
-    sleep $interval;
+    sleep "$interval";
   done
 }
 
