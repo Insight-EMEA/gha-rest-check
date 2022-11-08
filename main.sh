@@ -22,6 +22,10 @@ while test $# -gt 0; do
       interval=$(echo $1 | sed -e 's/^[^=]*=//g')
       shift
       ;;
+    --token*)
+      token=$(echo $1 | sed -e 's/^[^=]*=//g')
+      shift
+      ;;
     *)
       break
       ;;
