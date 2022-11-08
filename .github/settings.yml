@@ -7,7 +7,7 @@ repository:
 #   name: repo-name
 
   # A short description of the repository that will show up on GitHub
-  description: Ansible repository for ServiceNow automation and integration. Most of Standard Service Requests (SSR) are handled through this code.
+  description: GitHub Action to check status of HTTP GET request and/or content.
 
   # A URL with more information about the repository
 #   homepage: https://example.github.io/
@@ -16,9 +16,9 @@ repository:
 #   topics: github, probot
 
   # Either `true` to make the repository private, or `false` to make it public.
-#   private: true
+  private: false
 
-  visibility: public
+  visibility: internal
 
   # Either `true` to enable issues for this repository, `false` to disable them.
   has_issues: true
