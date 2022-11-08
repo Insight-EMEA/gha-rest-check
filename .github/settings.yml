@@ -61,58 +61,58 @@ repository:
 
 # Labels: define labels for Issues and Pull Requests
 
-labels:
+# labels:
 
-  # Workflow labels
-  - name: linting
-    color: FBCA04
-    description: Predicted code errors, including visual and standards
+#   # Workflow labels
+#   - name: linting
+#     color: FBCA04
+#     description: Predicted code errors, including visual and standards
 
-  # blocked statuses:
-  - name: with another team
-    color: B60205
-    description: Issue is handled by another team
-  - name: awaiting software update
-    color: B60205
-    description: Software needs updating to progress this issue
+#   # blocked statuses:
+#   - name: with another team
+#     color: B60205
+#     description: Issue is handled by another team
+#   - name: awaiting software update
+#     color: B60205
+#     description: Software needs updating to progress this issue
 
-  # Generic Labels
-  - name: bug
-    color: d73a4a
-    description: Something isn't working
-  - name: SECURITY
-    color: FF0000
-    description: Security issue involved
-  - name: help wanted
-    color: 008672
-    description: Extra attention is needed
-  - name: needs information
-    color: f9d0c4
-    description: requires further information
-  - name: needs triage
-    color: f9d0c4
-    description: requires triage as issue is accepted
-  - name: customer
-    color: FBCA04
-    description: This issue affects a customer
-  - name: enhancement
-    color: a2eeef
-    description: New feature or request
-  - name: priority:high
-    color: B60205
-    description: High priority
-  - name: priority:low
-    color: 47BCA7
-    description: Low priority
-  - name: escalated
-    color: 60081C
-    description: The issue has been escalated
-  - name: github
-    color: 000000
-    description: Anything relating to GitHub repository, documentation, Wiki
-  - name: documentation
-    color: 0075ca
-    description: Improvements or additions to documentation
+#   # Generic Labels
+#   - name: bug
+#     color: d73a4a
+#     description: Something isn't working
+#   - name: SECURITY
+#     color: FF0000
+#     description: Security issue involved
+#   - name: help wanted
+#     color: 008672
+#     description: Extra attention is needed
+#   - name: needs information
+#     color: f9d0c4
+#     description: requires further information
+#   - name: needs triage
+#     color: f9d0c4
+#     description: requires triage as issue is accepted
+#   - name: customer
+#     color: FBCA04
+#     description: This issue affects a customer
+#   - name: enhancement
+#     color: a2eeef
+#     description: New feature or request
+#   - name: priority:high
+#     color: B60205
+#     description: High priority
+#   - name: priority:low
+#     color: 47BCA7
+#     description: Low priority
+#   - name: escalated
+#     color: 60081C
+#     description: The issue has been escalated
+#   - name: github
+#     color: 000000
+#     description: Anything relating to GitHub repository, documentation, Wiki
+#   - name: documentation
+#     color: 0075ca
+#     description: Improvements or additions to documentation
 
 # Milestones: define milestones for Issues and Pull Requests
 # milestones:
@@ -180,5 +180,5 @@ branches:
         apps: []
         users: []
         teams: 
-          - @Insight-EMEA/site-reliability-engineers
-          - Insight-EMEA/infrastructure-automation
+          - site-reliability-engineers
+          - infrastructure-automation
