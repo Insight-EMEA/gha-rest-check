@@ -9,11 +9,11 @@ inputs:
   timeout:
     description: "Timeout before giving up in seconds"
     required: false
-    default: 30000
+    default: 900
   interval:
     description: "Interval between polling in seconds"
     required: false
-    default: 200
+    default: 60
   token:
     description: "Secret used for authentication"
     required: true
