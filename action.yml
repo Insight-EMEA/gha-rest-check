@@ -9,11 +9,14 @@ inputs:
   timeout:
     description: "Timeout before giving up in seconds"
     required: false
-    default: 30000
+    default: 900
   interval:
     description: "Interval between polling in seconds"
     required: false
-    default: 200
+    default: 60
+  token:
+    description: "Secret used for authentication"
+    required: true
 outputs:
   result:
     description: outputs the response from the call
@@ -27,4 +30,5 @@ runs:
         timeout ${{inputs.timeout }} ${GITHUB_ACTION_PATH}/main.sh \
         --url="${{ inputs.url }}" \
         --interval="${{ inputs.interval }}"\
+        --token="${{ inputs.token }}"\
       shell: bash
