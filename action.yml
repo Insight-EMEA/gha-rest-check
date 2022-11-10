@@ -29,6 +29,6 @@ runs:
         echo "${{ github.action_path }}"
         timeout ${{inputs.timeout }} ${GITHUB_ACTION_PATH}/main.sh \
         --url="${{ inputs.url }}" \
-        --interval="${{ inputs.interval }}"\
+        --interval="${{ inputs.interval }}" \
         --token="${{ inputs.token }}"\
       shell: bash
