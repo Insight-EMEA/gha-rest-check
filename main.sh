@@ -37,12 +37,15 @@ function poll_status {
   do
     status=$(curl "$url" -s -H "Authorization: Basic $token" | jq '.status');
     echo "$(date +%H:%M:%S): status is $status";
-    if [[ "$status" == "\"successful\"" || "$status" == "\"failed\"" || "$status" == "\"cancelled\"" ]]; then
+    if [[ "$status" == "\"successful\"" || "$status" == "\"failed\"" || "$status" == "\"cancelled\"" || "$status" == "\"error\"" ]]; then
         if [[ "$status" == "\"failed\"" ]]; then
           echo "Deployment failed!"
           exit 1;
         elif [[ "$status" == "\"cancelled\"" ]]; then
           echo "Deployment cancelled!";
+          exit 1;
+        elif [[ "$status" == "\"error\"" ]]; then
+          echo "Deployment had an error!";
           exit 1;
         else
           echo "Deployment complete!";
@@ -54,5 +57,5 @@ function poll_status {
   done
 }
 
-printf "\nPolling '%s' every %s seconds, until status is either 'successful', 'failed' or 'cancelled'\n" "${url%\?*}" "$interval"
+printf "\nPolling '%s' every %s seconds, until status is either 'successful', 'failed', 'cancelled' or 'error'\n" "${url%\?*}" "$interval"
 poll_status
